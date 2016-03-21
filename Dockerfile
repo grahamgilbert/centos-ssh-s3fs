@@ -14,7 +14,7 @@ RUN yum -y install \
     && git clone https://github.com/s3fs-fuse/s3fs-fuse
 
 WORKDIR s3fs-fuse
-RUN ./autogen.sh && ./configure --prefix=/usr --with-openssl && make && make install
+RUN ./autogen.sh && ./configure --prefix=/usr --with-openssl && make && make install && mkdir -p /data && chmod 777 /data
 WORKDIR /
 ADD mount-s3.sh /mount-s3.sh
 RUN rm -rf /s3fs-fuse && chmod +x /mount-s3.sh
