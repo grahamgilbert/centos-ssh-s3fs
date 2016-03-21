@@ -18,4 +18,4 @@ RUN ./autogen.sh && ./configure --prefix=/usr --with-openssl && make && make ins
 WORKDIR /
 ADD mount-s3.sh /mount-s3.sh
 RUN rm -rf /s3fs-fuse && chmod +x /mount-s3.sh
-ADD s3fs.conf /etc/services-config/supervisor/supervisord.d/s3fs.conf
+ADD s3fs.conf /etc/supervisord.d/s3fs.conf
