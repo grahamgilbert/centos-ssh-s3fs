@@ -1,5 +1,5 @@
 FROM jdeathe/centos-ssh:centos-7
-
+ENV SSH_INHERIT_ENVIRONMENT=true
 RUN yum -y install \
     automake \
     fuse-devel \
